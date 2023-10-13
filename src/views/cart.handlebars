@@ -1,0 +1,38 @@
+<div id="{{cart.id}}" class="container">
+
+    <div class=" cart-container" id="cart">
+        
+        <h3 class="bg-success">Tu carrito</h3>
+        {{#each cart.products}}
+        
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-action">Producto: {{product.title}}</li>
+            <li class="list-group-item list-group-item-action">Cantidad: {{quantity}}</li>
+            <li class="list-group-item list-group-item-action">Precio: {{product.price}}</li>
+            <li class="list-group-item list-group-item-action">Stock: {{product.stock}}</li>
+        </ul>
+
+        <button value={{product.id}} id="deleteBtn" class="btn btn-secondary">Eliminar del carrito</button>
+        {{/each}}
+
+        {{#if cart.products}}
+        <button value={{cart.id}} id="purchaseBtn" class="btn btn-primary">Finalizar compra</button>
+        {{else}}
+        <h3>¡No hay productos en tu carrito!</h3>       
+        {{/if}}
+        <a href="/products" class="btn btn-secondary">Seguir comprando</a>
+    </div>
+    <aside class="list-group" id="purchaseInfo">
+        <h5>Tu ticket</h5>
+        
+        <div class="card-body">
+            <p class="list-group-item list-group-item-action" id="purchaseCode">Code: </p>
+            <p class="list-group-item list-group-item-action" id="purchaseDate">Fecha: </p>
+            <p class="list-group-item list-group-item-action" id="purchaseAmount">Total: $</p>
+            <p class="list-group-item list-group-item-action" id="purchaser">Comprador: </p>
+        </div>
+    </aside>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/cart.js"></script>

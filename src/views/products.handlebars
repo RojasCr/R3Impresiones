@@ -1,0 +1,111 @@
+<div id="products">
+    <header>
+
+        <nav class="navbar navbar-dark bg-dark" id="cartel">
+            <h1>¡Bienvenido/a {{user.first_name}} {{user.last_name}}!</h1>
+            <h5>Eres: {{user.role}}</h5>
+
+            {{#if user.isAdmin}}
+                {{!-- <div class="anchor-container"> --}}
+                    <a href="/adminPanel"><button class="btn btn-outline-success me-2">Panel de admin</button></a>
+                    <a href="/auth/logout"><button class="btn btn-secondary">Logout</button> </a>
+                {{!-- </div> --}}
+            {{else}}
+                <div class="anchor-container">
+                    <a id={{user.cart.id}} class="anchor-cart" href="/carts?id={{user.cart.id}}"><img class="img-cart" src="https://cdn.icon-icons.com/icons2/1456/PNG/512/mbrishoppingcart_99558.png" alt=""><div id="productQuantity">{{user.totalProducts}}</div></a>
+                    <a id="logout" href="/auth/logout"><button class="btn btn-secondary btn-sm">Logout</button> </a>
+                </div>
+            {{/if}}
+
+
+        </nav>
+    </header>
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <form class="d-flex" action="" method="get">
+            <input class="form-control me-2" type="text" name="query" placeholder="Filtar" formaction="localhost:8080/products">
+            
+            <input class="form-control me-2" type="text" name="sort" placeholder="Ordenar" formaction="localhost:8080/products">
+            <input  class="btn btn-outline-success" type="submit" value="Filtrar">
+        </form>
+    </div>
+    <div class="lista">
+        {{#if user.isAdmin}}
+            {{#each products.payload}}
+                <div class="card">
+                    <a href="/products/description?pid={{id}}" >
+                        <div class="card-body">
+                            <img class="card-img-top" src={{thumbail}} alt="">
+                            <div class="description">
+                                <h5 class="card-title">{{title}}</h5>
+                                <p>{{category}}</p>
+                                {{!-- <p class="card-text">{{description}}</p> --}}
+                                    
+                                <span>${{price}}</span>
+                            </div>
+                                
+                        </div>
+                        
+                    </a>
+                    {{!-- <button id={{id}} class="btn btn-primary btn-block" value="deleteProduct">Borrar Producto</button> --}}
+                </div>
+            {{/each}}
+
+        {{else}}
+            {{#each products.payload}}
+                <div class="card">
+                    <a href="/products/description?pid={{id}}" >
+                        <div class="card-body">
+                            <img class="card-img-top" src={{thumbail}} alt="">
+                            <div class="description">
+                                <h5 class="card-title">{{title}}</h5>
+                                <p>{{category}}</p>
+                                {{!-- <p class="card-text">{{description}}</p> --}}
+                                    
+                                <span>${{price}}</span>
+                            </div>
+                                
+                        </div>
+                        
+                    </a>
+                    <button id={{id}} class="btn btn-primary btn-block" value="AddToCart">Agregar al carrito</button>
+                </div>
+            {{/each}}
+
+        {{/if}}
+                        
+    </div>
+    <footer class="pagination">
+        
+        {{#if products.prevLink}}
+            <li class="page-item">
+                <a class="page-link" href="{{products.prevLink}}" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <a class="page-link" href="{{products.prevLink}}">{{products.prevPage}}</a>
+        {{else}}
+            <li class="page-item disabled">
+                <a class="page-link" href="{{products.prevLink}}" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+
+        {{/if}}
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" href="">{{products.page}}</a>
+            </li>
+        {{#if products.nextLink}}
+            <a class="page-link" href="{{products.nextLink}}">{{products.nextPage}}</a>
+            <li class="page-item">
+                <a class="page-link" href="{{products.nextLink}}" tabindex="-1" aria-disabled="true">Next</a>
+            </li>
+        {{else}}
+            <li class="page-item disabled">
+                <a class="page-link" href="{{products.nextLink}}" tabindex="-1" aria-disabled="true">Next</a>
+            </li>
+
+        {{/if}}
+    </footer>
+    
+
+</div>
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/products.js"></script>

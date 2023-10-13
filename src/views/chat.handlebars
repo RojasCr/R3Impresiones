@@ -1,0 +1,26 @@
+<div id="contenedorChat">
+    {{!-- <h1>¡Hola {{user.name}}!</h1>
+    {{#if isAdmin}}
+        <h2>¡Bienvenido {{user.role}}!</h2>
+        <h3>Estos son los productos:</h3>
+        {{#each food}}
+            <p>{{this.name}}</p>
+            <p>{{this.price}}</p>
+        {{/each}}
+    {{/if}} --}}
+    {{!-- <input type="text" id="user" placeholder="Ingrese nickname"> --}}
+    <div id="res"></div>
+
+    <div id="contenedorText">
+        <input type="text" placeholder="Enviar mensaje..." id="text">
+        <div id="archivoBtn">
+            <img class="imagen" src="https://cdn.pixabay.com/photo/2016/03/21/20/05/image-1271454_640.png" alt="">
+            <input id = "file" type="file" >
+        </div>
+        <button id="enviarBtn"><img id="enviarImg" class="imagen" src="https://w7.pngwing.com/pngs/841/271/png-transparent-computer-icons-send-miscellaneous-angle-triangle.png" alt=""></button>
+    </div>
+</div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat.js"></script>
+    {{!-- <script src="/js/index.js"></script> --}}

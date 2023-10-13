@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    border-width: 1px;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+#contenedorChat{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3px;
+    padding: 5px;
+    height: 94%;
+    margin: auto;
+    width: 97%;
+}
+
+#user{
+    
+    height: 5%;
+    /*padding: 2px 2px 2px 2px;*/
+    text-align: center;
+    /*margin-bottom: 2px;*/
+}
+
+#res{
+    height: 90%;
+    width: 100%;
+    border: 1px solid red;
+    padding: 10px 0 0 10px;
+    overflow-wrap: break-word;
+    overflow-y: scroll;
+}
+
+#contenedorText{
+    display: flex;
+    height: calc(5% + 1.6px);
+    width: 100%;
+    height: 9%;
+    gap: 9px;
+}
+
+#text{
+    
+    width: 94%;
+    /* border: none;*/
+    padding-left: 10px;
+}
+
+
+
+#enviarBtn{
+    width: 6%;
+    border: 1px solid black;
+    border-radius: 50%
+}
+
+#archivoBtn{
+    border: 1px solid black;
+    display: flex;
+    width: 6%;
+    border-radius: 50%
+}
+
+#archivoBtn:active{
+    transform: scale(0.95);
+}
+#enviarBtn:active{
+    transform: scale(0.95);
+}
+
+input[type="file"]{
+    display: none;
+}
+
+.imagen{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    border-radius: 50%
+}
+
+.imagen:hover{
+    cursor: pointer;
+}
+
+
+@media  (max-width: 400px) {
+    
+    *{
+        margin: 0;
+        padding: 0;
+    }
+/*
+    html, body{
+        height: 100%;
+        width: 100%;
+    }*/
+
+    #contenedorChat{
+        display: flex;
+        height: 95%;
+        
+        align-items:center;
+    }
+
+    #res{
+        height: 85%;
+    }
+
+    #contenedorText{
+        height: 10%;
+    }
+
+
+    /*#text{
+        height: 5%;
+        width: calc(100% - 10% - 1.6px);
+    }*/
+
+    #archivoBtn, #enviarBtn{
+        /*width: calc(100% - 90% - 1.6px);*/
+        width: 18%;
+    }
+}
+
+/*@media (max-height:500px){
+    #user{
+        height: 45px;
+    }
+
+    #res{
+        height: 80%;
+    }
+
+    #contenedorText{
+        height: 45px;
+    }
+
+    *{
+        font-size:large;
+    }
+
+    button{
+        width: 30%
+    }
+}*/

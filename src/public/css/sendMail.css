@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.fondo{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* opacity: 0.6; */
+    /* border-right: 5px solid yellow ; */
+} 
+
+.form-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto auto;
+    width: max-content;
+    padding: 2%;
+    background-color: rgba(251, 251, 253, 0.871);
+    border: rgba(251, 251, 253, 0.871) solid;
+    border-radius: 1%;
+    gap: 4vh;
+}
+
+#contactForm{
+    /* padding: 2%; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 4vh;
+}
+
+.input-email{
+    width: 100%;
+}
+
+.input-email::placeholder{
+    text-align: center;
+}
+
+.anchor-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

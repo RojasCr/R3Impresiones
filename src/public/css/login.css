@@ -1,0 +1,83 @@
+html, body{
+    display: flex;
+    /* align-items: center; */
+    height: 100%;
+    width: 100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.fondo{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* opacity: 0.6; */
+    /* border-right: 5px solid yellow ; */
+}
+
+.login-container{
+    position: relative;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+    margin: auto auto;
+    margin-left: 5vh;
+    width: max-content;
+    padding: 1%;
+    background-color: rgba(251, 251, 253, 0.871);
+    border: rgba(251, 251, 253, 0.871) solid;
+    border-radius: 1%;
+    z-index: 1;
+}
+
+#loginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+    width: 100%;
+}
+
+.form-control::placeholder{
+    text-align: center;
+}
+
+.signup-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.auth-container button{
+    border: none;
+    background-color: rgba(251, 251, 253, 0.871);
+}
+
+.btn-google, .btn-github{
+    /* background: #E93F2E; */
+    /* height: min-content; */
+    width: 5vh;
+    cursor: pointer;
+    /* border-radius: 3%; */
+    /* border-color: #e67272; */
+    /*border-width: 1px;
+    border-style: solid;
+    border-color: #b72213; */
+}
+
+@media (max-width: 600px){
+    .login-container{
+        margin: auto auto
+    }
+}

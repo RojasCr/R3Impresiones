@@ -1,0 +1,19 @@
+{{!-- <img class="fondo" src="https://www.doitmarketing.net/wp-content/uploads/2021/08/do-it-marketing-comercio-electronico.png" alt=""> --}}
+
+<div class="form-container">
+    <h3 class="card-title">Restauración de contraseña</h3>
+    {{!-- <p>Recupera tu cuenta</p> --}}
+    <form id="contactForm" action="">
+        <label for="">Te enviaremos un email para verificar que eres tú</label>
+        <input class="input-email" placeholder="Email" type="email" name="email">
+
+        <div class="anchor-container">
+            <a class="btn btn-link btn-sm" href="/login">¿Recordaste tu contraseña?</a>
+            <button class="btn btn-primary" type="submit" id="submitBtn">Enviar mail</button>
+        </div>
+    </form>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/sendMail.js"></script>
