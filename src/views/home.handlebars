@@ -1,10 +1,98 @@
 <div id="productos">
-    {{#each products}}
-        <ul>
-            <li>Producto: {{title}}</li>
-            <li>Precio: {{price}}</li>
-        </ul>
-    {{/each}}
+    <header>
+
+        <nav class="navbar navbar-dark bg-dark" id="cartel">
+            <h1>R3Impresiones</h1>
+
+            <div class="anchor-container">
+                <a href="/login"><button class="btn btn-outline-success me-2">Inicia sesión</button></a>
+                <a href="/signup"><button class="btn btn-secondary">Crear cuenta</button> </a>
+            </div>
+
+        </nav>
+    </header>
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <form class="d-flex" action="" method="get">
+            <input class="form-control me-2" type="text" name="query" placeholder="Filtar" formaction="localhost:8080/products">
+            
+            <input class="form-control me-2" type="text" name="sort" placeholder="Ordenar" formaction="localhost:8080/products">
+            <input  class="btn btn-outline-success" type="submit" value="Filtrar">
+        </form>
+    </div>
+    <div class="lista">
+        {{#if user.isAdmin}}
+            {{#each products.payload}}
+                <div class="card">
+                    <a href="/products/description?pid={{id}}" >
+                        <div class="card-body">
+                            <img class="card-img-top" src={{thumbail}} alt="">
+                            <div class="description">
+                                <h5 class="card-title">{{title}}</h5>
+                                <p>{{category}}</p>
+                                {{!-- <p class="card-text">{{description}}</p> --}}
+                                    
+                                <span>${{price}}</span>
+                            </div>
+                                
+                        </div>
+                        
+                    </a>
+                    {{!-- <button id={{id}} class="btn btn-primary btn-block" value="deleteProduct">Borrar Producto</button> --}}
+                </div>
+            {{/each}}
+
+        {{else}}
+            {{#each products.payload}}
+                <div class="card">
+                    <a href="/products/description?pid={{id}}" >
+                        <div class="card-body">
+                            <img class="card-img-top" src={{thumbail}} alt="">
+                            <div class="description">
+                                <h5 class="card-title">{{title}}</h5>
+                                <p>{{category}}</p>
+                                {{!-- <p class="card-text">{{description}}</p> --}}
+                                    
+                                <span>${{price}}</span>
+                            </div>
+                                
+                        </div>
+                        
+                    </a>
+                    <button id={{id}} class="btn btn-primary btn-block" value="AddToCart">Agregar al carrito</button>
+                </div>
+            {{/each}}
+
+        {{/if}}
+                        
+    </div>
+    <footer class="pagination">
+        
+        {{#if products.prevLink}}
+            <li class="page-item">
+                <a class="page-link" href="{{products.prevLink}}" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <a class="page-link" href="{{products.prevLink}}">{{products.prevPage}}</a>
+        {{else}}
+            <li class="page-item disabled">
+                <a class="page-link" href="{{products.prevLink}}" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+
+        {{/if}}
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" href="">{{products.page}}</a>
+            </li>
+        {{#if products.nextLink}}
+            <a class="page-link" href="{{products.nextLink}}">{{products.nextPage}}</a>
+            <li class="page-item">
+                <a class="page-link" href="{{products.nextLink}}" tabindex="-1" aria-disabled="true">Next</a>
+            </li>
+        {{else}}
+            <li class="page-item disabled">
+                <a class="page-link" href="{{products.nextLink}}" tabindex="-1" aria-disabled="true">Next</a>
+            </li>
+
+        {{/if}}
+    </footer>
     
 </div>
 <!--<script src="/socket.io/socket.io.js"></script>

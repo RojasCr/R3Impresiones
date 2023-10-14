@@ -80,14 +80,6 @@ class AuthRouter extends CustomRouter{
             try {
                 const { email, newPassword } = req.body;
 
-                //const user = await Users.findUser(email);
-
-                //const isRepeated = compareCrypt(newPassword, user.password);
-
-                /*if(isRepeated){
-                    return res.json({status: "error", message: "El password no puede ser el mismo"})
-                }*/
-
                 await Users.updateUser(email, newPassword);
                 return res.sendSuccess("Contraseña restaurada");
             } catch (error) {

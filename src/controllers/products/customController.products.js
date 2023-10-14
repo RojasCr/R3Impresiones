@@ -92,7 +92,7 @@ class ProductsRouter extends customRouter{
             }
         });
 
-        this.post("/loadProducts", ["ADMIN"],async (req, res) => {
+        this.post("/loadProducts", ["PUBLIC"],async (req, res) => {
             try{
                 await productsModel.deleteMany();
                 const products = await manejadorDeProductos.getProducts();

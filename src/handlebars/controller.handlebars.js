@@ -14,38 +14,24 @@ const router = Router();
 
 //Middlewares
 const publicAcces = (req, res, next) => {
-    // if(req.session.user){
-    //     return res.redirect("/products")
-    // }
+    
     if(req.cookies.user){
         return res.redirect("/products")
     }
-    // if(req.user){
-    //     return res.redirect("/products")
-    // }
+    
     next();
 }
 const privateAcces = (req, res, next) => {
-    // if(!req.session.user){
-        //     return res.redirect("/login")
-        // }
+    
         if(!req.cookies.user){
                 return res.redirect("/")
         }
-        // if(!req.user){
-        //     return res.redirect("/")
-        // }        
+           
     next();
 }
 
 router.get("/", (req, res) => {
     try{
-        /*const products = await productsModel.find();
-
-        const productsStr = JSON.stringify(products);
-        const productsObj = JSON.parse(productsStr);
-        res.render("home", { products: productsObj});
-*/
         res.redirect("/login");
     } catch(err){
         throw new Error(err);
@@ -83,15 +69,7 @@ const handlePolicies = (policies) => {
 router.get("/products", /*privateAcces,*/handlePolicies(["USER"]), async(req, res) => {
     let { limit, page, sort, query } = req.query;
     const  user  = req.cookies.user;
-    //console.log(req.user)
-    //const userStr = JSON.stringify(user);
-    //const userObj = JSON.parse(userStr)
-    // let products = await manejadorDeProductos.getProducts();
-    // if(!limit){
-    //     return res.json(products);
-    // }
-    // let productsLimit = await products.slice(0, limit);
-    // res.json(productsLimit);
+    
     let response = await productManager.getProducts(limit, page, sort, query);
     const orden = sort? `&sort=${sort}` : "";
     const filter = query? `&query=${query}` : "";

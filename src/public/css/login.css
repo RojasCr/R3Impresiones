@@ -1,6 +1,6 @@
 html, body{
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     height: 100%;
     width: 100%;
 }
@@ -14,6 +14,7 @@ html, body{
     position: absolute;
     height: 100%;
     width: 100%;
+    object-fit: fill;
     /* opacity: 0.6; */
     /* border-right: 5px solid yellow ; */
 }
@@ -26,7 +27,7 @@ html, body{
     align-items: center;
     gap: 1vh;
     margin: auto auto;
-    margin-left: 5vh;
+    /* margin-left: 5vh; */
     width: max-content;
     padding: 1%;
     background-color: rgba(251, 251, 253, 0.871);

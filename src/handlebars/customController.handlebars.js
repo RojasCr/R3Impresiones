@@ -33,15 +33,39 @@ class HandlebarsRouter extends CustomRouter{
             }
         })
 
-        this.get("/", ["PUBLIC"], (req, res) => {
+        this.get("/", ["PUBLIC"], async (req, res) => {
             try{
-                res.redirect("/products");
+                let { limit, page, sort, query } = req.query;
+                
+                let response = await productManager.getProducts(limit, page, sort, query);
+                const orden = sort? `&sort=${sort}` : "";
+                const filter = query? `&query=${query}` : "";
+                
+                const products = {
+                    status: response ? "success" : "error",
+                    payload: response.docs,
+                    totalPages: response.totalPages,
+                    prevPage: response.prevPage,
+                    nextPage: response.nextPage,
+                    page: response.page,
+                    hasPrevPage: response.hasPrevPage,
+                    hasNextPage: response.hasNextPage,
+                    prevLink: response.hasPrevPage? `/products?limit=${limit||10}&page=${Number(response.page) - 1}${orden + filter}` : null,
+                    nextLink: response.hasNextPage? `/products?limit=${limit||10}&page=${Number(response.page) + 1}${orden + filter}` : null
+                }
+            
+                const productsStr = JSON.stringify(products);
+                const productsObj = JSON.parse(productsStr);
+
+                //console.log(user)
+                return res.render("home", {products: productsObj, style: "css/productos.css", limit: limit});
+                
             } catch(err){
                 throw new Error(err);
             }
         });
 
-        this.get("/products", ["USER", "ADMIN", "PREMIUM"], async(req, res) => {
+        this.get("/products", ["USER", "PREMIUM", "ADMIN"], async(req, res) => {
             let { limit, page, sort, query } = req.query;
             const user = req.cookies.user;
             

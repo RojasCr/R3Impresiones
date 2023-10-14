@@ -19,7 +19,7 @@ class CustomRouter{
     }
 
     get(path, policies,...callbacks){
-        this.router.get(path, this.redirector, this.handlePolicies(policies), this.generateCustomResponses,this.applyCallbacks(callbacks));
+        this.router.get(path/*, this.redirector*/, this.handlePolicies(policies), this.generateCustomResponses,this.applyCallbacks(callbacks));
     }
 
     post(path, policies, ...callbacks){
@@ -56,7 +56,7 @@ class CustomRouter{
         next();
     }
 
-    redirector = (req, res, next) => {
+    /*redirector = (req, res, next) => {
         const authPaths = ["/restorePassword", "/restore", "/signup","/google", "/google/callback", "/github", "/github/callback"]
 
         if(authPaths.includes(req.path)){
@@ -76,7 +76,7 @@ class CustomRouter{
 
         return next();
 
-    }
+    }*/
 
     handlePolicies = (policies) => {
 

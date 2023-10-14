@@ -1,13 +1,13 @@
 [
  {
   "id": 1,
-  "title": "Notebook",
-  "description": "Computadora 4GB RAM 256GB SSD",
-  "price": 100000,
-  "thumbail": "https://mla-s1-p.mlstatic.com/873896-MLA48241212970_112021-F.jpg///tumb_",
+  "title": "Batman",
+  "description": "Batman 25cm de alto",
+  "price": 7000,
+  "thumbail": "images/Productos/Dioramas/Batman-PhotoRoom.png-PhotoRoom.png",
   "code": 1,
   "stock": 1000,
-  "category": "Computadoras"
+  "category": "Figura"
  },
  {
   "id": 2,
