@@ -65,7 +65,7 @@ class HandlebarsRouter extends CustomRouter{
             }
         });
 
-        this.get("/products", ["USER", "PREMIUM", "ADMIN"], async(req, res) => {
+        this.get("/products", ["PUBLIC"], async(req, res) => {
             let { limit, page, sort, query } = req.query;
             const user = req.cookies.user;
             

@@ -11,43 +11,43 @@
  },
  {
   "id": 2,
-  "title": "Zapatillas",
-  "description": "Zapatillas para correr",
-  "price": 7999,
-  "thumbail": "https://plataforma.iduo.com.ar/Panelcontenidos/Contenidos/Zapatillas-topper-deportivas-hombre-fast-1661211997-0-0.jpg",
+  "title": "Valle del Fín",
+  "description": "Diorama Valle del Fín de Naruto",
+  "price": 3000,
+  "thumbail": "images/Productos/Dioramas/Valle_del_Fin.png",
   "code": 2,
   "stock": 1000,
-  "category": "Calzados"
+  "category": "Diorama"
  },
  {
   "id": 3,
-  "title": "Impresora 3D",
-  "description": "Impresora compatible con PLA, ABS...",
-  "price": 99999,
-  "thumbail": "https://kimera3d.com/wp-content/uploads/2020/10/BIQU-B1_19-e1603647930205.jpg",
+  "title": "DeadPool Bust",
+  "description": "Busto DeadPool",
+  "price": 1200,
+  "thumbail": "images/Productos/Figuras/Deadpool_Bust.png",
   "code": 3,
   "stock": 50,
-  "category": "Impresoras"
+  "category": "Figuras"
  },
  {
   "id": 4,
-  "title": "Smart TV",
-  "description": "Sistema Android 55''",
-  "price": 246500,
-  "thumbail": "https://maxihogar.vtexassets.com/arquivos/ids/163599/B5522US6A_0.png?v=638017821792730000",
+  "title": "Messi",
+  "description": "Messi con cabeza grande",
+  "price": 2000,
+  "thumbail": "images/Productos/Figuras/Messi.png",
   "code": 4,
   "stock": 730,
-  "category": "Televisores"
+  "category": "Figura"
  },
  {
   "id": 5,
-  "title": "Celular",
-  "description": "Celular con android oreo",
-  "price": 69999,
-  "thumbail": "https://www.oscarbarbieri.com/pub/media/catalog/product/cache/7baadf0dec41407c7702efdbff940ecb/a/2/a23azula.png",
+  "title": "Sonic",
+  "description": "Sonic el erizo",
+  "price": 1200,
+  "thumbail": "images/Productos/Figuras/Sonic.jpg",
   "code": 5,
   "stock": 1000,
-  "category": "Tecno"
+  "category": "Figura"
  },
  {
   "id": 6,
