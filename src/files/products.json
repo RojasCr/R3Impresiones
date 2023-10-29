@@ -51,96 +51,96 @@
  },
  {
   "id": 6,
-  "title": "Moldes",
-  "description": "Moldes para tortas 22cm",
+  "title": "Llavero Perro salchicha",
+  "description": "Llavero personalizado",
   "price": 500,
-  "thumbail": "https://aluminiosalfusa.com/wp-content/uploads/2021/01/molde-redondo-libra-1.jpg",
+  "thumbail": "images/Productos/Llaveros/Perro_salchicha.png",
   "code": 6,
   "stock": 1000,
-  "category": "Repostería"
+  "category": "Llavero"
  },
  {
   "id": 7,
-  "title": "Rotomartillo",
-  "description": "Taladro rotopercutor",
-  "price": 7300,
-  "thumbail": "https://arcomaquinarias.com/producto/multimedia/iGPLUUjbME.jpg",
+  "title": "Llavero Sharingan",
+  "description": "Llavero sharingan del anime Naruto",
+  "price": 400,
+  "thumbail": "images/Productos/Llaveros/Sharingan.png",
   "code": 7,
   "stock": 1000,
-  "category": "Herramientas"
+  "category": "Llavero"
  },
  {
   "id": 8,
-  "title": "Tablet ",
-  "description": "Tablet Z-342 11''",
-  "price": 5600,
-  "thumbail": "https://montegrande.solutekla.com/photo/1/lenovo/tablets/tablet_lenovo_tb7305x_pantalla_70_conectividad_lte_memoria_1gb_almacenamiento_16gb_gris/tablet_lenovo_tb7305x_pantalla_70_conectividad_lte_memoria_1gb_almacenamiento_16gb_gris_0001",
+  "title": "Mate Darth Vader",
+  "description": "Mate con temática Star Wars",
+  "price": 2000,
+  "thumbail": "images/Productos/Mates/Darth_Vader.png",
   "code": 8,
   "stock": 1000,
-  "category": "Tecno"
+  "category": "Mate"
  },
  {
   "id": 9,
-  "title": "Camiseta clásica",
-  "description": "Camiseta lisa negra",
-  "price": 3500,
-  "thumbail": "https://static.vecteezy.com/system/resources/previews/012/027/398/original/black-t-shirt-mockup-realistic-t-shirt-png.png",
+  "title": "Mate DeadPool",
+  "description": "Mate con temática DeadPool",
+  "price": 2000,
+  "thumbail": "images/Productos/Mates/DeadPool.png",
   "code": 9,
   "stock": 1000,
-  "category": "Indumentaria"
+  "category": "Mate"
  },
  {
   "id": 10,
-  "title": "Ropero",
-  "description": "Ropero marrón 2 puertas",
-  "price": 12000,
-  "thumbail": "https://d2r9epyceweg5n.cloudfront.net/stores/001/183/780/products/56287-placard-22-dakar-melamina-wengue-cerrado1-679dc45add2a6f0af716325273634611-1024-1024.jpg",
+  "title": "Mate Fernet",
+  "description": "Mate con temática Fernet",
+  "price": 2000,
+  "thumbail": "images/Productos/Mates/Fernet.png",
   "code": 10,
   "stock": 1000,
-  "category": "Muebles"
+  "category": "Mate"
  },
  {
   "id": 11,
-  "title": "Banquetas x 12",
-  "description": "Banquetas apilables",
-  "price": 15000,
-  "thumbail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5uCDWDkf_WxrTiRGBPgyIKuPL1gprElbuEfyuyh5VIYlojyx807p8pbJmxZjgGKWg8aM&usqp=CAU",
+  "title": "Mate Groot",
+  "description": "Mate con temática Gurdianes de la Galaxia",
+  "price": 2000,
+  "thumbail": "images/Productos/Mates/Groot.png",
   "code": "1234",
   "stock": "1",
   "status": true,
-  "category": "Muebles"
+  "category": "Mate"
  },
  {
   "id": 12,
-  "title": "Teclado PC",
-  "description": "Teclado gamer USB",
-  "price": 3000,
-  "thumbail": "https://mla-s1-p.mlstatic.com/745312-MLA46504064560_062021-F.jpg",
+  "title": "Llavero Messi",
+  "description": "Llavero con temática selección argentina",
+  "price": 400,
+  "thumbail": "images/Productos/Llaveros/Llavero_Messi.png",
   "code": "12345",
   "stock": "1",
   "status": true,
-  "category": "Perifericos"
+  "category": "Llavero"
  },
  {
   "id": 13,
-  "title": "Adaptador",
-  "description": "Adaptador 220v",
-  "price": 300,
-  "thumbail": "data:image/jpeg;base64,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",
+  "title": "Lámpara Gengar",
+  "description": "Lámpara con temática Pokémon",
+  "price": 2000,
+  "thumbail": "images/Productos/Lamparas/Gengar.png",
   "code": "1234548",
   "stock": "1",
   "status": true,
-  "category": "Accesorios"
+  "category": "Lampara"
  },
  {
   "id": 14,
-  "title": "Lavarropa",
-  "description": "Lavarropa semiautomático 10lts",
-  "price": 48000,
-  "thumbail": "https://saturnohogar.com.ar/3976/lavarropas-semiautom%C3%A1tico-philco-phss080b-8kg-philco.jpg",
+  "title": "Llavero Dedos",
+  "description": "Llavero con temática de Merlina",
+  "price": 500,
+  "thumbail": "images/Productos/Llaveros/Dedos.png",
   "code": "4545",
   "stock": "1",
   "status": true,
-  "category": "Electro"
+  "category": "llavero"
  }
 ]
