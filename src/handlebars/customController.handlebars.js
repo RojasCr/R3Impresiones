@@ -58,7 +58,7 @@ class HandlebarsRouter extends CustomRouter{
                 const productsObj = JSON.parse(productsStr);
 
                 //console.log(user)
-                return res.render("home", {products: productsObj, style: "css/productos.css", limit: limit});
+                return res.render("home", {products: productsObj, style: "css/home.css", limit: limit});
                 
             } catch(err){
                 throw new Error(err);
