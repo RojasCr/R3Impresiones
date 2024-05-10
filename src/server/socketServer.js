@@ -29,6 +29,8 @@ initializePassport();
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+
 //Se ejecuta router(app)
 router;
 
