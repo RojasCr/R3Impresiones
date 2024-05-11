@@ -27,7 +27,7 @@
   "thumbail": "images/Productos/Figuras/Deadpool_Bust.png",
   "code": 3,
   "stock": 50,
-  "category": "Figuras"
+  "category": "Figura"
  },
  {
   "id": 4,
@@ -130,7 +130,7 @@
   "code": "1234548",
   "stock": "1",
   "status": true,
-  "category": "Lampara"
+  "category": "Lámpara"
  },
  {
   "id": 14,
@@ -141,6 +141,6 @@
   "code": "4545",
   "stock": "1",
   "status": true,
-  "category": "llavero"
+  "category": "Llavero"
  }
 ]

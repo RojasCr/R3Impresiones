@@ -38,6 +38,23 @@ document.addEventListener("click", (e) => {
 
 
     }
+
+    if(actionBtn.className == "loadProducts"){
+        
+        fetch("/api/products/loadProducts", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({})
+        })
+        .then(response => response.json())
+        .then(data => alert(data.payload))
+        .catch(err => console.log(err))
+
+
+
+    }
     //console.log(changeRole.value)
 })
 

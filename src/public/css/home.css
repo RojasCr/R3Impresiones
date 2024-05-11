@@ -66,8 +66,8 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width: calc(100%/5);
-    height: 51vh;
+    /*width: calc(100%/5);
+    height: 51vh;*/
 }
 
 .card a{
@@ -78,8 +78,8 @@
     height: 90%;
 }
 
-.card-img-top{
-    height: 60%;
+.cardimg{
+    /*height: 60%;*/
     border-bottom: solid black;
 }
 
@@ -104,6 +104,7 @@
 }
 
 .pagination{
+    margin: 1% 0;
     display: flex;
     justify-content: center;
 }
