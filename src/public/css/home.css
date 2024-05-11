@@ -20,10 +20,16 @@
     color: white;
 }
 
+.navbar h2{
+    display: flex;
+    align-items: center;
+    gap: 1%;
+}
+
 .anchor-container{
     display: flex;
     justify-content: flex-end;
-    /* gap: 5%; */
+    gap: 5%;
     width: 12%;
 
 }
@@ -34,6 +40,59 @@
     width: 50%;
     filter: invert();
     /* background-color: black; */
+}
+
+#contenedor_fondo{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1%;
+    width: 100%;
+    height: 88vh;
+}
+
+#anterior{
+    position: absolute;
+    height: 5%;
+    width: 5%;
+    left: 10px;
+    z-index: 3;
+    filter: invert();
+    cursor:pointer;
+}
+
+#siguiente{
+    position: absolute;
+    color: aliceblue;
+    height: 5%;
+    width: 5%;
+    right: 10px;
+    z-index: 3;
+    filter: invert();
+    cursor:pointer;
+}
+
+#frase{
+    position: absolute;
+    font-size: 400%;
+    /* color: rgb(240, 227, 227); */
+    font-family: 'Fasthand', cursive;
+    cursor: default;
+    z-index: 2;
+    filter: invert();
+}
+
+#fondo{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: all ease;
+    opacity: 0;
+    animation-name: apareceIzquierda;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    z-index: 1;
 }
 
 .img-cart{

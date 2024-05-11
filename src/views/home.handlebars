@@ -2,7 +2,10 @@
     <header>
 
         <nav class="navbar navbar-dark bg-dark" id="cartel">
-            <h1>R3Impresiones</h1>
+            <h2>
+                <img height="50px" width="50px" src="/images/Productos/Logo_R3.png" alt="">
+                R3Impresiones
+            </h2>
 
             <div class="anchor-container">
                 <a href="/login"><button class="btn btn-outline-success me-2">Inicia sesión</button></a>
@@ -18,6 +21,14 @@
             <input class="form-control me-2" type="text" name="sort" placeholder="Ordenar" formaction="localhost:8080/products">
             <input  class="btn btn-outline-success" type="submit" value="Filtrar">
         </form>
+    </div>
+    <div id="contenedor_fondo">
+            <img src="/images/Productos/anterior.png" id="anterior" alt="">
+            <img src="/images/Productos/siguiente.png" id="siguiente" alt="">
+            <!-- <button id="anterior">anterior imagen</button> -->
+            <!--<div id="frase">Cambia tu forma de peinarte</div>-->
+            <img id="fondo" src="/images/Productos/Logo_R3.png" alt="">
+            <!-- <button id="siguiente">siguiente imagen</button> -->
     </div>
     <div class="lista">
         {{#if user.isAdmin}}
