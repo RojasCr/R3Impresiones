@@ -4,6 +4,7 @@ const { Server } = require("socket.io");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const passport = require("passport");
+const cors = require("cors")
 
 const initializePassport = require("../config/passport.config");
 const mongoSessions = require("../db/sessions");
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/../public"));
 app.use(cookieParser());
+app.use(cors())
 
 app.use(loggerMiddleware)
 

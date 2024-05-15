@@ -1,6 +1,11 @@
 const customRouter = require("../../routers/CustomRouter");
 const { v4: uuidv4 } = require('uuid');
 
+//MercadoPago
+const {MercadoPagoConfig, Preference} = require("mercadopago");
+const client = new MercadoPagoConfig({accessToken: "TEST-3782743320192702-050916-150d7e4cece480157c12184bd52a5670-161496915"})
+
+
 //const Users = require("../../repositories/index")
 const MongoCartManager = require("../../dao/mongoManager/MongoCartManager");
 const cartManager = new MongoCartManager();
@@ -33,9 +38,38 @@ class CartsRouter extends customRouter{
             }
         });
 
-        this.get("/:cid/purchase", ["USER", "PREMIUM"], async (req, res) => {
+        this.post("/:cid/purchase", ["USER", "PREMIUM"], async (req, res) => {
             try {
-                const { cid } = req.params;
+
+                const body = {
+                    items: [
+                        {
+                            title: req.body.title,
+                            quantity: req.body.quantity,
+                            unit_price: req.body.price,
+                            currency_id: "ARS"
+                        }
+                    ],
+                    back_urls: {
+                        success: "https://www.google.com.ar/",
+                        failure: "https://www.google.com.ar/",
+                        pending: "https://www.google.com.ar/"
+                    },
+                    auto_return: "approved"
+                };
+        
+                const preference = new Preference(client);
+                const result = await preference.create({body});
+        
+                console.log(result);
+        
+                res.sendSuccess({
+                    id: result.id
+                });
+
+
+
+                /*const { cid } = req.params;
                 const cart = await cartManager.getCartById(cid);
                 const productsToPurchase = cart.products;
 
@@ -68,8 +102,10 @@ class CartsRouter extends customRouter{
                     console.log(cartUpdated)
                     res.cookie("user", currentUser, {httpOnly: true, secure: true}).sendSuccess(newTicket);
                 }
+                */
                 
-                
+
+
                 /**AGREGAR CASO DE COMPRA FALLIDA**/
 
             } catch (error) {

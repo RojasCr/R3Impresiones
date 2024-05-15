@@ -50,8 +50,8 @@ class HandlebarsRouter extends CustomRouter{
                     page: response.page,
                     hasPrevPage: response.hasPrevPage,
                     hasNextPage: response.hasNextPage,
-                    prevLink: response.hasPrevPage? `/products?limit=${limit||10}&page=${Number(response.page) - 1}${orden + filter}` : null,
-                    nextLink: response.hasNextPage? `/products?limit=${limit||10}&page=${Number(response.page) + 1}${orden + filter}` : null
+                    prevLink: response.hasPrevPage? `?limit=${limit||10}&page=${Number(response.page) - 1}${orden + filter}` : null,
+                    nextLink: response.hasNextPage? `?limit=${limit||10}&page=${Number(response.page) + 1}${orden + filter}` : null
                 }
             
                 const productsStr = JSON.stringify(products);
@@ -109,8 +109,12 @@ class HandlebarsRouter extends CustomRouter{
             const cartId = await cartManager.getCartById(id);
             const cartStr = JSON.stringify(cartId);
             const cartObj = JSON.parse(cartStr);
+
+            const productsToPurchase = cartId.products;
+            const purchaseFilterAvailable = productsToPurchase.filter(p => p.product.stock !== 0);
+            const totalAmount = purchaseFilterAvailable.reduce((acc, curr) => acc + curr.product.price*curr.quantity, 0);
         
-            res.render("cart", {cart: cartObj, style: "css/cart.css"})
+            res.render("cart", {cart: cartObj, totalAmount: totalAmount, style: "css/cart.css"})
         });
 
         this.get("/purchase", ["USER", "PREMIUM", "ADMIN"], async(req, res) => {

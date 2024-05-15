@@ -14,6 +14,14 @@
 
         </nav>
     </header>
+    <div id="contenedor_fondo">
+            <img src="/images/Productos/anterior.png" id="anterior" alt="">
+            <img id="fondo" height="700px" width="700px" src="/images/Productos/Logo_R3.png" alt="">
+            <img src="/images/Productos/siguiente.png" id="siguiente" alt="">
+            <!-- <button id="anterior">anterior imagen</button> -->
+            <!--<div id="frase">Cambia tu forma de peinarte</div>-->
+            <!-- <button id="siguiente">siguiente imagen</button> -->
+    </div>
     <div class="navbar navbar-expand-lg navbar-light bg-light">
         <form class="d-flex" action="" method="get">
             <input class="form-control me-2" type="text" name="query" placeholder="Filtar" formaction="localhost:8080/products">
@@ -21,14 +29,6 @@
             <input class="form-control me-2" type="text" name="sort" placeholder="Ordenar" formaction="localhost:8080/products">
             <input  class="btn btn-outline-success" type="submit" value="Filtrar">
         </form>
-    </div>
-    <div id="contenedor_fondo">
-            <img src="/images/Productos/anterior.png" id="anterior" alt="">
-            <img src="/images/Productos/siguiente.png" id="siguiente" alt="">
-            <!-- <button id="anterior">anterior imagen</button> -->
-            <!--<div id="frase">Cambia tu forma de peinarte</div>-->
-            <img id="fondo" src="/images/Productos/Logo_R3.png" alt="">
-            <!-- <button id="siguiente">siguiente imagen</button> -->
     </div>
     <div class="lista">
         {{#if user.isAdmin}}
@@ -106,5 +106,5 @@
     </footer>
     
 </div>
-<!--<script src="/socket.io/socket.io.js"></script>
-<script src="/js/index.js"></script>-->
+<!--<script src="/socket.io/socket.io.js"></script>-->
+<script src="/js/efectos.js"></script>

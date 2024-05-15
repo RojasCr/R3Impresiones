@@ -8,16 +8,18 @@
     height: 100%;
 }*/
 
-#products{
+#productos{
     display: flex;
     flex-direction: column;
-    gap: 1vh;
+    /*gap: 1vh;*/
     /* padding: 0.2vh; */
-    padding-bottom: 2vh;
+    /*padding-bottom: 2vh;*/
+    background-color: aliceblue;
 }
 
 .navbar{
     color: white;
+    /*margin: 1%;*/
 }
 
 .navbar h2{
@@ -47,29 +49,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1%;
-    width: 100%;
-    height: 88vh;
+    /*margin-bottom: 1%;*/
+    /*width: 100%;
+    height: 88vh;*/
+    padding: 1%;
 }
 
 #anterior{
-    position: absolute;
+    /*position: absolute;*/
     height: 5%;
     width: 5%;
-    left: 10px;
+    /*left: 10px;*/
     z-index: 3;
-    filter: invert();
+    /*filter: invert();*/
     cursor:pointer;
 }
 
 #siguiente{
-    position: absolute;
+    /*position: absolute;*/
     color: aliceblue;
     height: 5%;
     width: 5%;
-    right: 10px;
+    /*right: 10px;*/
     z-index: 3;
-    filter: invert();
+    /*filter: invert();*/
     cursor:pointer;
 }
 
@@ -85,10 +88,10 @@
 
 #fondo{
     position: relative;
-    width: 100%;
-    height: 100%;
+    /*width: 90%;
+    height: 90%;*/
     transition: all ease;
-    opacity: 0;
+    /*opacity: 0;*/
     animation-name: apareceIzquierda;
     animation-duration: 2s;
     animation-fill-mode: forwards;
@@ -118,7 +121,8 @@
     justify-content: center;
     width: 95%;
     gap: 1vh;
-    margin: auto auto;
+    padding-top: 1%;
+    margin: auto;
 }
 
 .card{
@@ -163,10 +167,38 @@
 }
 
 .pagination{
-    margin: 1% 0;
+    padding: 1% 0;
     display: flex;
     justify-content: center;
 }
+
+
+
+@keyframes apareceIzquierda {
+    0%{
+        left: -100px;
+        opacity: 0;
+    } 
+    100%{
+        left: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes desapareceIzquierda {
+    0%{
+        left: 0px;
+        opacity: 1;
+    }
+    100%{
+        left: -100px;
+        opacity: 0;
+    }
+}
+
+
+
+
 
 @media (max-width: 600px){
     #products{

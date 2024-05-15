@@ -15,6 +15,11 @@
         <button value={{product.id}} id="deleteBtn" class="btn btn-secondary">Eliminar del carrito</button>
         {{/each}}
 
+        <div class="total">
+            <h3>Total: </h3>
+            <h5 >$ <span id="totalAmount">{{totalAmount}}</span> </h5>
+        </div>
+
         {{#if cart.products}}
         <button value={{cart.id}} id="purchaseBtn" class="btn btn-primary">Finalizar compra</button>
         {{else}}
@@ -34,5 +39,8 @@
     </aside>
 </div>
 
+<div id="wallet_container"></div>
+
+<script src="https://sdk.mercadopago.com/js/v2"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/cart.js"></script>
