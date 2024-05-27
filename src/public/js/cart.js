@@ -25,7 +25,7 @@ document.addEventListener("click", async(e) => {
     console.log(currentBtn.value)
     
     if(currentBtn.id === "purchaseBtn"){
-        const urlPay = `http://localhost:8080/api/carts/${currentBtn.value}/purchase`
+        const urlPay = `/api/carts/${currentBtn.value}/purchase`
         //const urlInfo = `http://localhost:8080/api/carts/${currentBtn.value}/purchase`
         
         
