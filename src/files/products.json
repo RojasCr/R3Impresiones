@@ -54,7 +54,7 @@
   "title": "Llavero Perro salchicha",
   "description": "Llavero personalizado",
   "price": 500,
-  "thumbail": "images/Productos/Llaveros/Perro_salchicha.png",
+  "thumbail": "./images/Productos/Llaveros/Perro_salchicha.png",
   "code": 6,
   "stock": 1000,
   "category": "Llavero"

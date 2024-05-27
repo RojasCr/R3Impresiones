@@ -2,8 +2,13 @@
     <header>
 
         <nav class="navbar navbar-dark bg-dark" id="cartel">
-            <h1>¡Bienvenido/a {{user.first_name}} {{user.last_name}}!</h1>
+            <!--<h1>¡Bienvenido/a {{user.first_name}} {{user.last_name}}!</h1>
             <h5>Eres: {{user.role}}</h5>
+            -->
+            <h2>
+                <img height="50px" width="50px" src="/images/Productos/Logo_R3.png" alt="">
+                R3Impresiones
+            </h2>
 
             {{#if user.isAdmin}}
                 {{!-- <div class="anchor-container"> --}}
@@ -34,7 +39,7 @@
                 <div class="card">
                     <a href="/products/description?pid={{id}}" >
                         <div class="card-body">
-                            <img class="card-img-top" src={{thumbail}} alt="">
+                            <img height="284px" width="284px" class="cardimg" src={{thumbail}} alt="">
                             <div class="description">
                                 <h5 class="card-title">{{title}}</h5>
                                 <p>{{category}}</p>
@@ -55,7 +60,7 @@
                 <div class="card">
                     <a href="/products/description?pid={{id}}" >
                         <div class="card-body">
-                            <img class="card-img-top" src={{thumbail}} alt="">
+                            <img height="284px" width="284px" class="cardimg" src={{thumbail}} alt="">
                             <div class="description">
                                 <h5 class="card-title">{{title}}</h5>
                                 <p>{{category}}</p>

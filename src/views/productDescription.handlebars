@@ -5,6 +5,11 @@
             {{!-- <h1>¡Bienvenido/a {{user.first_name}} {{user.last_name}}!</h1>
             <h5>Eres: {{user.role}}</h5> --}}
 
+            <h2>
+                <img height="50px" width="50px" src="/images/Productos/Logo_R3.png" alt="">
+                R3Impresiones
+            </h2>
+
             {{#if user.isAdmin}}
                 {{!-- <div class="anchor-container"> --}}
                     <a href="/adminPanel"><button class="btn btn-outline-success me-2">Panel de admin</button></a>
@@ -12,7 +17,7 @@
                 {{!-- </div> --}}
             {{else}}
                 <div class="anchor-container">
-                    <a id={{user.cart.id}} class="anchor-cart" href="/carts?id={{user.cart.id}}"><img height="55vh" width="55vh" class="img-cart" src="https://cdn.icon-icons.com/icons2/1456/PNG/512/mbrishoppingcart_99558.png" alt=""><div id="productQuantity">{{user.totalProducts}}</div></a>
+                    <a id={{user.cart.id}} class="anchor-cart" href="/carts?id={{user.cart.id}}"><img class="img-cart" src="https://cdn.icon-icons.com/icons2/1456/PNG/512/mbrishoppingcart_99558.png" alt=""><div id="productQuantity">{{user.totalProducts}}</div></a>
                     <a id="logout" href="/auth/logout"><button class="btn btn-secondary btn-sm">Logout</button> </a>
                 </div>
             {{/if}}
@@ -26,7 +31,7 @@
         <p>Categoría: {{product.category}}</p>
         <p>Descripción: {{product.description}}</p>
         <p>Precio: {{product.price}}</p>
-        <img height="300px" width="300px" src="{{product.thumbail}}"> 
+        <img height="300px" width="300px" src={{product.thumbail}}> 
         <p>Código: {{product.code}}</p>
         <p>Cantidad disponible: {{product.stock}}</p>
         {{!-- {{/each}} --}}
@@ -41,4 +46,4 @@
     </div>
 </div>
 
-{{!-- <script src="js/productDescription.js"></script> --}}
+<script src="js/productDescription.js"></script>
