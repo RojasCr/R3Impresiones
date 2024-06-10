@@ -37,7 +37,7 @@
         {{#if user.isAdmin}}
             {{#each products.payload}}
                 <div class="card">
-                    <a href="/products/description?pid={{id}}" >
+                    <a href="/products/description/{{id}}" >
                         <div class="card-body">
                             <img height="284px" width="284px" class="cardimg" src={{thumbail}} alt="">
                             <div class="description">
@@ -58,7 +58,7 @@
         {{else}}
             {{#each products.payload}}
                 <div class="card">
-                    <a href="/products/description?pid={{id}}" >
+                    <a href="/products/description/{{id}}" >
                         <div class="card-body">
                             <img height="284px" width="284px" class="cardimg" src={{thumbail}} alt="">
                             <div class="description">
@@ -70,8 +70,8 @@
                             </div>
                                 
                         </div>
-                        
                     </a>
+                        
                     <button id={{id}} class="btn btn-primary btn-block" value="AddToCart">Agregar al carrito</button>
                 </div>
             {{/each}}

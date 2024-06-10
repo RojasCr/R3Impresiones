@@ -1,6 +1,6 @@
 
 const productError = require("../../utils/errors/product/product.error");
-const productsModel = require("../mongo/models/products.model");
+const productModel = require("../mongo/models/products.model");
 
 class MongoProductManager{
     getProducts = async (limit, page, sort, query) => {
@@ -21,7 +21,7 @@ class MongoProductManager{
             }
             
 
-            const productsLimit = await productsModel.paginate(filtrado, {limit: limit || 10, page: page || 1, sort: {price: sort } || none});
+            const productsLimit = await productModel.paginate(filtrado, {limit: limit || 10, page: page || 1, sort: {price: sort } || none});
             return productsLimit;
         } catch(err){
             throw new Error(err);
@@ -31,7 +31,7 @@ class MongoProductManager{
     getProductbyId = async(pid) => {
         try {
             
-            const product = await productsModel.findOne({id: pid});
+            const product = await productModel.findOne({id: pid});
             //const productsLength = await productsModel.count();
             if(!product){
                 //throw new Error(error);
@@ -45,7 +45,7 @@ class MongoProductManager{
 
     getByMongoId = async(id) => {
         try {
-            const product = await productsModel.findById(id);
+            const product = await productModel.findById(id);
             if(!product){
                 return `Product not found`;
             }
@@ -58,7 +58,7 @@ class MongoProductManager{
     addProduct = async (product) => {
         try{
         
-            const products = await productsModel.find();
+            const products = await productModel.find();
 
             if(products.length !== 0){
                 product.id = products[products.length - 1].id + 1;
@@ -67,7 +67,7 @@ class MongoProductManager{
             }
 
             
-            const added = await productsModel.create(product);
+            const added = await productModel.create(product);
             return added;
             //res.send(`Producto agregado con id: ${added.id}`);
             
@@ -80,7 +80,7 @@ class MongoProductManager{
     updateProduct = async (pid, product) => {
         try {
             
-            const response = await productsModel.updateOne({id: pid}, product);
+            const response = await productModel.updateOne({id: pid}, product);
             return response;
             //return res.json(response);
         } catch (error) {
@@ -91,7 +91,7 @@ class MongoProductManager{
     deleteProduct = async (pid) => {
         try {
             
-            await productsModel.deleteOne({id: pid});
+            await productModel.deleteOne({id: pid});
             return `Product ${pid} deleted`;
         } catch (error) {
             throw new Error(error);

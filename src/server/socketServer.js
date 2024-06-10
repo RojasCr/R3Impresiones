@@ -36,5 +36,4 @@ app.use(passport.session());
 //Se ejecuta router(app)
 router;
 
-
 module.exports = { server, io, app };

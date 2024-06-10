@@ -6,15 +6,11 @@
 #productos{
     display: flex;
     flex-direction: column;
-    /*gap: 1vh;*/
-    /* padding: 0.2vh; */
-    /*padding-bottom: 2vh;*/
     background-color: aliceblue;
 }
 
 .navbar{
     color: white;
-    /*margin: 1%;*/
 }
 
 .navbar h2{
@@ -25,10 +21,9 @@
 
 .anchor-container{
     display: flex;
-    justify-content: flex-end;
-    gap: 5%;
-    width: 12%;
-
+    justify-content: center;
+    align-items: center;
+    gap: 1%;
 }
 
 .anchor-cart{
@@ -36,7 +31,15 @@
     height: 100%;
     width: 50%;
     filter: invert();
-    /* background-color: black; */
+}
+
+.img-cart{
+    width: 50%;
+    height: 100%;
+}
+    
+#productQuantity{
+    width: 50%;
 }
 
 #contenedor_fondo{
@@ -93,23 +96,6 @@
     z-index: 1;
 }
 
-.img-cart{
-    width: 50%;
-    height: 100%;
-}
-
-#productQuantity{
-    width: 50%;
-}
-
-/*#logout{
-    width: 50%;
-}*/
-/*
-#logout .btn{
-    width: 100%;
-}*/
-
 .lista{
     display: flex;
     flex-wrap: wrap;
@@ -124,8 +110,6 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    /*width: calc(100%/5);
-    height: 51vh;*/
 }
 
 .card a{
@@ -137,16 +121,13 @@
 }
 
 .cardimg{
-    /*height: 60%;*/
     border-bottom: solid black;
 }
 
 .card-body .description{
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     justify-content: center;
-    /* height: 40%; */
 }
 
 .description p{
