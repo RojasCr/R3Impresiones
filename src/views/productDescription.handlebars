@@ -1,5 +1,5 @@
-<div class="container" id="producto">
-    <header id="header">
+<div id="product">
+    <header>
 
         <nav class="navbar navbar-dark bg-dark" id="cartel">
             {{!-- <h1>¡Bienvenido/a {{user.first_name}} {{user.last_name}}!</h1>
@@ -26,23 +26,24 @@
         </nav>
     </header>
     <div class="description">
-        {{!-- {{#each product}} --}}
-        <p>Título: {{product.title}}</p>
-        <p>Categoría: {{product.category}}</p>
-        <p>Descripción: {{product.description}}</p>
-        <p>Precio: {{product.price}}</p>
-        <img height="300px" width="300px" src={{product.thumbail}}> 
-        <p>Código: {{product.code}}</p>
-        <p>Cantidad disponible: {{product.stock}}</p>
-        {{!-- {{/each}} --}}
-        {{!-- <button id={{id}} class="btn btn-primary" value="AddToCart">Agregar al carrito</button> --}}
-        <a href="/products" class="btn btn-secondary">
-        {{#if user.isAdmin}}
-        Volver al inicio
-        {{else}}
-        Seguir comprando
-        {{/if}}
-        </a>
+        <div id="img-container">
+            <img height="500px" width="500px" src={{product.thumbail}}> 
+        </div>
+        <aside>
+            <h1 id="title">{{product.title}}</h1>
+            <p id="price">${{product.price}}</p>
+            <p id="category">{{product.category}}</p>
+            <p id="description">{{product.description}}</p>
+            <!--<p>Código: {{product.code}}</p>-->
+            <p id="stock">Stock: {{product.stock}}</p>
+            <a href="/products" class="btn btn-secondary">
+                {{#if user.isAdmin}}
+                Volver al inicio
+                {{else}}
+                Seguir comprando
+                {{/if}}
+            </a>
+        </aside>
     </div>
 </div>
 
