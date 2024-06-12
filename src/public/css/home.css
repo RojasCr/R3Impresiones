@@ -173,37 +173,38 @@
 
 
 @media (max-width: 600px){
-    #products{
-        margin: 0 0;
+   
+
+    #contenedor_fondo{
         width: 100%;
-        /* height: 45%; */
     }
 
-    .card{
-        height: 59vh;
-        width: 90%;
-    }
-
-    .anchor-container{
-        justify-content: flex-end;
-        /* gap: 7%; */
-        width: 42%;
-    }
-
-    .anchor-cart{
-        width: 50%;
-    }
-
-    .img-cart{
-        width: 50%;
-    }
-
-    /*.anchor-container #logout{
-        width: 45%;
-        
-    }
-
-    .anchor-container .btn{
+    #fondo{
         width: 100%;
-    }*/
+        object-fit: contain;
+    }
+
+    #anterior{
+        position: absolute;
+        height: 5%;
+        width: 5%;
+        left: 10px;
+        z-index: 3;
+        filter: invert();
+        cursor:pointer;
+    }
+
+    #siguiente{
+        position: absolute;
+        height: 5%;
+        width: 5%;
+        right: 10px;
+        z-index: 3;
+        filter: invert();
+        cursor:pointer;
+    }    
+
+    #cartel{
+        justify-content: center;
+    }
 }
