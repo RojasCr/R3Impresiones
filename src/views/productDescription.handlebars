@@ -36,6 +36,10 @@
             <p id="description">{{product.description}}</p>
             <!--<p>Código: {{product.code}}</p>-->
             <p id="stock">Stock: {{product.stock}}</p>
+            {{#if user.isAdmin}}
+            {{else}}
+                <button id="{{product.id}}" class="btn btn-primary btn-block" value="AddToCart">Agregar al carrito</button>
+            {{/if}}
             <a href="/products" class="btn btn-secondary">
                 {{#if user.isAdmin}}
                 Volver al inicio

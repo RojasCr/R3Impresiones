@@ -74,6 +74,10 @@ html, body{
     object-fit: contain;
 }
 
+/*img:hover{
+    transform: scale(2.2);
+}*/
+
 .description aside{
     display: flex;
     height: 100%;
