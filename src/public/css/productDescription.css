@@ -66,6 +66,7 @@ html, body{
 .description #img-container{
     height: 100%;
     width: 50%;
+    overflow: hidden;
 }
 
 #img-container img{
@@ -74,9 +75,9 @@ html, body{
     object-fit: contain;
 }
 
-/*img:hover{
-    transform: scale(2.2);
-}*/
+img:hover{
+    transform: scale(1.5);
+}
 
 .description aside{
     display: flex;
