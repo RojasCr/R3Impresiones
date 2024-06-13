@@ -1,11 +1,3 @@
-//const purchaseBtn = document.getElementById("purchaseBtn");
-//const deleteBtn = document.getElementById("deleteBtn");
-
-
-const mp = new MercadoPago("TEST-b44c2836-db5d-499f-8afe-f1f3ec5e15c9", {
-    locale: "es-AR"
-});
-
 const cartId = document.getElementsByClassName("container")[0].id;
 
 const purchaseInfo = document.getElementById("purchaseInfo");
@@ -15,9 +7,6 @@ const purchaseAmount = document.getElementById("purchaseAmount");
 const purchaser = document.getElementById("purchaser");
 
 const totalAmount = document.getElementById("totalAmount");
-/*purchaseBtn.addEventListener("click", () => {
-
-})*/
 
 document.addEventListener("click", async(e) => {
     
@@ -26,20 +15,6 @@ document.addEventListener("click", async(e) => {
     
     if(currentBtn.id === "purchaseBtn"){
         const urlPay = `/api/carts/${currentBtn.value}/purchase`
-        //const urlInfo = `http://localhost:8080/api/carts/${currentBtn.value}/purchase`
-        
-        
-        /*fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            purchaseInfo.style.visibility = "visible";
-            purchaseCode.innerHTML += data.payload.code
-            purchaseDate.innerHTML += data.payload.purchase_datatime
-            purchaseAmount.innerHTML += data.payload.amount
-            purchaser.innerHTML += data.payload.purchaser
-        })
-        .catch(error => console.log(error))
-        */
 
         const orderData = {
             title: "Total",
@@ -55,7 +30,7 @@ document.addEventListener("click", async(e) => {
     
         const preference = await response.json();
     
-        createCheckoutBtn(preference.payload.id);
+        createCheckoutBtn(preference.payload.apiKey, preference.payload.id);
     }
 
     
@@ -88,7 +63,14 @@ document.addEventListener("click", async(e) => {
     
 })
 
-const createCheckoutBtn = async(preferenceId) => {
+const createCheckoutBtn = async(apiKey, preferenceId) => {
+
+    const mp = new MercadoPago(apiKey, {
+        locale: "es-AR"
+    });
+
+    console.log(apiKey);
+
     const bricksBuilder = mp.bricks();
 
     const renderComponent = async () => {
