@@ -1,7 +1,5 @@
 node_modules
 .env.development
 .env.production
-.env.local
-.env.test
 .env
 test

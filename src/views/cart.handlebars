@@ -1,33 +1,59 @@
-<div id="{{cart.id}}" class="container">
+<header>
 
-    <div class=" cart-container" id="cart">
+    <nav class="navbar navbar-dark bg-dark" id="cartel">
+        {{!-- <h1>¡Bienvenido/a {{user.first_name}} {{user.last_name}}!</h1>
+        <h5>Eres: {{user.role}}</h5> --}}
+
+        <h2>
+            <img height="50px" width="50px" src="/images/Productos/Logo_R3.png" alt="">
+            R3Impresiones
+        </h2>
+
+        {{#if user.isAdmin}}
+            {{!-- <div class="anchor-container"> --}}
+                <a href="/adminPanel"><button class="btn btn-outline-success me-2">Panel de admin</button></a>
+                <a href="/auth/logout"><button class="btn btn-secondary">Logout</button> </a>
+            {{!-- </div> --}}
+        {{else}}
+            <div class="anchor-container">
+                <!--<a id={{user.cart.id}} class="anchor-cart" href="/carts?id={{user.cart.id}}"><img class="img-cart" src="https://cdn.icon-icons.com/icons2/1456/PNG/512/mbrishoppingcart_99558.png" alt=""><div id="productQuantity">{{user.totalProducts}}</div></a>-->
+                <a id="logout" href="/auth/logout"><button class="btn btn-secondary btn-sm">Logout</button> </a>
+            </div>
+        {{/if}}
+
+
+    </nav>
+</header>
+<div id="{{cart.id}}" class="main">
+    <div class="cart-container" id="cart">
         
-        <h3 class="bg-success">Tu carrito</h3>
         {{#each cart.products}}
-        
-        <ul class="list-group">
-            <li class="list-group-item list-group-item-action">Producto: {{product.title}}</li>
-            <li class="list-group-item list-group-item-action">Cantidad: {{quantity}}</li>
-            <li class="list-group-item list-group-item-action">Precio: {{product.price}}</li>
-            <li class="list-group-item list-group-item-action">Stock: {{product.stock}}</li>
-        </ul>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action">Producto: {{product.title}}</li>
+                <li class="list-group-item list-group-item-action">Cantidad: {{quantity}}</li>
+                <li class="list-group-item list-group-item-action">Precio: {{product.price}}</li>
+                <li class="list-group-item list-group-item-action">Stock: {{product.stock}}</li>
+            </ul>
 
-        <button value={{product.id}} id="deleteBtn" class="btn btn-secondary">Eliminar del carrito</button>
+            <button value={{product.id}} id="deleteBtn" class="btn btn-secondary">Eliminar del carrito</button>
         {{/each}}
 
-        <div class="total">
+
+    </div>
+    <div class="total">
+        <div class="resumeTotal">
             <h3>Total: </h3>
             <h5 >$ <span id="totalAmount">{{totalAmount}}</span> </h5>
-        </div>
-
         {{#if cart.products}}
-        <button value={{cart.id}} id="purchaseBtn" class="btn btn-primary">Finalizar compra</button>
+            <button value={{cart.id}} id="purchaseBtn" class="btn btn-primary">Finalizar compra</button>
         {{else}}
-        <h3>¡No hay productos en tu carrito!</h3>       
+            <h3>¡No hay productos en tu carrito!</h3>       
         {{/if}}
         <a href="/products" class="btn btn-secondary">Seguir comprando</a>
+
+        </div>
     </div>
-    <aside class="list-group" id="purchaseInfo">
+    <!--<aside class="list-group" id="purchaseInfo">
         <h5>Tu ticket</h5>
         
         <div class="card-body">
@@ -36,7 +62,7 @@
             <p class="list-group-item list-group-item-action" id="purchaseAmount">Total: $</p>
             <p class="list-group-item list-group-item-action" id="purchaser">Comprador: </p>
         </div>
-    </aside>
+    </aside>-->
 </div>
 
 <div id="wallet_container"></div>
