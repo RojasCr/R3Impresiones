@@ -68,7 +68,7 @@ header{
 .cart-container{
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 60%;
     padding: 1%;
     gap: 1vh;
 }
@@ -77,21 +77,32 @@ header{
     display: flex;
     align-items: center;
     border: 1px solid lightgray;
+    background-color: white;
 }
 
 .img-container{
     display: flex;
     height: 100%;
-    width: 40%;
+    /*width: 40%;*/
     align-items: center;
 }
 
 .img-container img{
-    width: 100%;
+    /*width: 100%;*/
 }
 
 .list-group{
     width: 100%;
+    border-left: 1px solid rgba(0, 0, 0, .125);
+}
+
+.list-group li{
+    border: 0;
+    border-bottom: inset;
+}
+
+.list-group li:last-child{
+    border-bottom: none;
 }
 
 #purchaseInfo{

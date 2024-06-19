@@ -37,12 +37,16 @@
             <img height="500px" width="500px" src={{product.thumbail}}> 
         </div>
         <aside>
-            <h1 id="title">{{product.title}}</h1>
-            <p id="price">${{product.price}}</p>
-            <p id="category">{{product.category}}</p>
-            <p id="description">{{product.description}}</p>
-            <!--<p>Código: {{product.code}}</p>-->
-            <p id="stock">Stock: {{product.stock}}</p>
+            <ul class="info-container">
+                <li id="title">{{product.title}}</li>
+                <li id="price">${{product.price}}</li>
+                <li id="category">{{product.category}}</li>
+                <li id="description">{{product.description}}</li>
+                <!--<p>Código: {{product.code}}</p>-->
+                <li id="stock">Stock: {{product.stock}}</li>
+            </ul>
+            
+            <div class="btn-container">
             {{#if user.isAdmin}}
             {{else}}
             {{#if user}}
@@ -66,6 +70,7 @@
             </a>
             {{/if}}
             {{/if}}
+            </div>
         </aside>
     </div>
 </div>

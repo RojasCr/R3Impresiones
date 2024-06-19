@@ -92,7 +92,29 @@ html, body{
     border-radius: 2%;
 }
 
+aside .info-container{
+    display: contents;
+    list-style: none;
+}
+
+.info-container li{
+    padding: 5%;
+    border-bottom: 1px solid lightgray;
+}
+
+aside .btn-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+    height: 18%;
+}
+
+.description aside #title{
+    font-size: x-large;
+    font-weight: 600;
+}
+
 .description aside #price{
     font-size: 30px;
-    font-weight: 600;
+    
 }
