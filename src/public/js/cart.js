@@ -1,4 +1,4 @@
-const cartId = document.getElementsByClassName("main")[0].id;
+const cartId = document.getElementsByClassName("cartInfo")[0].id;
 
 const purchaseInfo = document.getElementById("purchaseInfo");
 const purchaseDate = document.getElementById("purchaseDate");

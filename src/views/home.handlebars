@@ -34,7 +34,7 @@
         {{#if user.isAdmin}}
             {{#each products.payload}}
                 <div class="card">
-                    <a href="/products/description?pid={{id}}" >
+                    <a href="/products/description/{{id}}" >
                         <div class="card-body">
                             <img class="card-img-top" src={{thumbail}} alt="">
                             <div class="description">
@@ -55,7 +55,7 @@
         {{else}}
             {{#each products.payload}}
                 <div class="card">
-                    <a href="/products/description?pid={{id}}" >
+                    <a href="/products/description/{{id}}" >
                         <div class="card-body">
                             <img height="284px" width="284px" class="cardimg" src={{thumbail}} alt="">
                             <div class="description">

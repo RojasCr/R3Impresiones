@@ -3,12 +3,19 @@
     padding: 0;
 }
 
-/*html, body{
+html, body{
     height: 100%;
     width: 100%;
-}*/
+}
 
 .main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: aliceblue;
+}
+
+.cartInfo{
     /*display: flex;
     padding: 1vh;
     /* flex-direction: column; */
@@ -18,7 +25,7 @@
     /*flex-direction: column;*/
     justify-content: center;
     background-color: aliceblue;
-    height: 100%;
+    /*height: 100%;*/
 }
 
 header{
@@ -61,9 +68,30 @@ header{
 .cart-container{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 40%;
     padding: 1%;
     gap: 1vh;
+}
+
+.product-container{
+    display: flex;
+    align-items: center;
+    border: 1px solid lightgray;
+}
+
+.img-container{
+    display: flex;
+    height: 100%;
+    width: 40%;
+    align-items: center;
+}
+
+.img-container img{
+    width: 100%;
+}
+
+.list-group{
+    width: 100%;
 }
 
 #purchaseInfo{
@@ -89,10 +117,27 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 25%;
-    gap: 1%;
+    height: 32vh;
+   
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 2%;
     padding: 5%;
+}
+
+.resumeTotal .button-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /*justify-content: center;*/
+    /*align-items: center;
+    width: 12%;*/
+}
+
+.button-container .btn{
+    height: 12%;
+}
+
+#wallet_container{
+    background-color: aliceblue;
 }

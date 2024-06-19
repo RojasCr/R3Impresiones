@@ -65,7 +65,7 @@ class HandlebarsRouter extends CustomRouter{
             }
         });
 
-        this.get("/products", ["PUBLIC"], async(req, res) => {
+        this.get("/products", ["USER"], async(req, res) => {
             let { limit, page, sort, query } = req.query;
             const user = req.cookies.user;
             
@@ -92,7 +92,7 @@ class HandlebarsRouter extends CustomRouter{
             return res.render("products", {products: productsObj, user, style: "css/productos.css", limit: limit});
         });
 
-        this.get("/products/description/:id", ["USER", "PREMIUM", "ADMIN"],async(req, res) => {
+        this.get("/products/description/:id", ["PUBLIC"],async(req, res) => {
             const { id } = req.params;
             const user = req.cookies.user
 
