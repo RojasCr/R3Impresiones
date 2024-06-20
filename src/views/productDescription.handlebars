@@ -10,24 +10,28 @@
                 R3Impresiones
             </h2>
 
-            <div class="anchor-container">
             {{#if user.isAdmin}}
+            <div class="anchor-container">
                 
                 <a href="/adminPanel"><button class="btn btn-outline-success me-2">Panel de admin</button></a>
                 <a href="/auth/logout"><button class="btn btn-secondary">Logout</button> </a>
                 
+            </div>
             {{else}}
             {{#if user}}
+            <div class="anchor-container-user">
                 <a id={{user.cart.id}} class="anchor-cart" href="/carts?id={{user.cart.id}}"><img class="img-cart" src="https://cdn.icon-icons.com/icons2/1456/PNG/512/mbrishoppingcart_99558.png" alt=""><div id="productQuantity">{{user.totalProducts}}</div></a>
                 <a id="logout" href="/auth/logout"><button class="btn btn-secondary btn-sm">Logout</button> </a>
+            </div>
             {{else}}
+            <div class="anchor-container">
                 
                 <a href="/login"><button class="btn btn-outline-success me-2">Inicia sesión</button></a>
                 <a href="/signup"><button class="btn btn-secondary">Crear cuenta</button> </a>
                 
-            {{/if}}
-            {{/if}}
             </div>
+            {{/if}}
+            {{/if}}
 
 
         </nav>

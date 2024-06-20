@@ -26,11 +26,19 @@ html, body{
     gap: 1%;
 }
 
-.anchor-container{
+.anchor-container-user{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 12%;
+    gap: 1%;
+}
+
+.anchor-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*width: 12%;*/
     gap: 1%;
 }
 
@@ -105,6 +113,7 @@ aside .info-container{
 aside .btn-container{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1%;
     height: 18%;
 }

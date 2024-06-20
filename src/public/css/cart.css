@@ -46,7 +46,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 12%;
+    /*width: 12%;*/
 }
 
 .anchor-cart{
@@ -85,10 +85,6 @@ header{
     height: 100%;
     /*width: 40%;*/
     align-items: center;
-}
-
-.img-container img{
-    /*width: 100%;*/
 }
 
 .list-group{
